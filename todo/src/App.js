@@ -9,15 +9,7 @@ function App() {
 const [state, dispatch] = useReducer(reducer, initialState);
 console.log(state);
 
-const addTodo= (event, input) => {
-  event.preventDefault();
-  const newTodo ={
-    id: new Date(),
-    item: input,
-    completed: false
-  }
-  dispatch({type:"ADD_TODO_ITEM", payload: newTodo})
-}
+
 
 const Completed = (id) => {
   dispatch({type: "COMPLETED_ITEM", payload: id})

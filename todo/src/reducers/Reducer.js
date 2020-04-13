@@ -3,7 +3,7 @@ import React, {useState, useReducer} from "react";
 
 export const initialState={
     title: "ToDo List",
-    todoList:[{id: new Date.}],
+    todoList:[{id: new Date, item: "WakeUp", completed:false}],
     editingTitle: false,
     editingItem: false,
     completedItem: false,
@@ -27,16 +27,7 @@ export const reducer = (state, action) => {
             case "ADD_TODO":
                 return {...state, todoList: [...state.todoList, action.payload]
                 }
-    
-            case "COMPLETED_TODO":
-                return state.map((item) => {
-                        return item.id === action.payload ?
-                    {...item, completed: !item.completed} : item
-                }
-            )
-    
-            case "CLEAR_COMPLETED_TODO" : 
-                return state.filter((item) => !item.completed)
+
     
             default:
                 return state

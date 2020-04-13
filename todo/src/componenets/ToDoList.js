@@ -8,6 +8,15 @@ const [newItem, setNewItem] = useState("")
 const handleItemChanges = e => {
     setNewItem(e.target.value);
 }
+const addTodo= (event, input) => {
+    event.preventDefault();
+    const newTodo ={
+      id: new Date(),
+      item: input,
+      completed: false
+    }
+    dispatch({type:"ADD_TODO", payload: newTodo})
+  }
 
 
     return(
@@ -18,7 +27,7 @@ const handleItemChanges = e => {
             onChange={handleItemChanges}
             />
         <button className="add-button"
-      onClick={()=>dispatch({type:"ADD_TODO", payload: newItem})}>Add Item</button>
+      onClick={addTodo}>Add Item</button>
         {state.todoList.map(item=>{console.log(item);
                return( <h4>{item.item}</h4>)
         })}

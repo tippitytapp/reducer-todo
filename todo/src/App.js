@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Title from "./componenets/Title";
 
 function App() {
   return (
     <div className="App">
-
+      <Title />
     </div>
   );
 }

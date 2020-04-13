@@ -22,7 +22,7 @@ In this project, you build an app that let's you display a todo list from reduce
 - [x] CD into the project base directory `cd reducer-todo`.
 - [x] Create a new react app running `npx create-react-app todo --use-npm`.
 - [x] CD into the react app directory `cd todo`.
-- [ ] Start up the app using `npm start`.
+- [x] Start up the app using `npm start`.
 - [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [x] Push commits: git push origin `<firstName-lastName>`.

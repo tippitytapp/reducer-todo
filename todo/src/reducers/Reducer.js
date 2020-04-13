@@ -3,7 +3,7 @@ import React, {useState, useReducer} from "react";
 
 export const initialState={
     title: "ToDo List",
-    todoListList:[{id: Date.now()}],
+    todoList:[{id: new Date.}],
     editingTitle: false,
     editingItem: false,
     completedItem: false,
@@ -24,29 +24,22 @@ export const reducer = (state, action) => {
                 editingTitle:false,
                 title:action.payload
             }
-        case 'ADD_TODO_ITEM':
-            const newTodo = {
-                id: Date.now(),
-                name: "",
-                completed: false
-            }
-            return{
-                ...state,
-                todoListList:[...this.state.todoListList, newTodo]
-            }
-        case 'SET_EDITING_ITEM':
-            return{
-                ...state,
-                editingItem:true
-            }
-        case 'UPDATE_ITEM':
-            return{
-                ...state,
-                editingItem:false,
-                todoListList:[...this.state.todoListList, action.payload]
-            }
-        default:
-            return state;
-
+            case "ADD_TODO":
+                return {...state, todoList: [...state.todoList, action.payload]
+                }
+    
+            case "COMPLETED_TODO":
+                return state.map((item) => {
+                        return item.id === action.payload ?
+                    {...item, completed: !item.completed} : item
+                }
+            )
+    
+            case "CLEAR_COMPLETED_TODO" : 
+                return state.filter((item) => !item.completed)
+    
+            default:
+                return state
+    
     }
 }

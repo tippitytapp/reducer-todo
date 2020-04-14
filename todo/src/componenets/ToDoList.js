@@ -11,7 +11,7 @@ const handleItemChanges = e => {
 const addTodo= (event, input) => {
     event.preventDefault();
     const newTodo ={
-      id: new Date(),
+      id: Date(),
       item: input,
       completed: false
     }

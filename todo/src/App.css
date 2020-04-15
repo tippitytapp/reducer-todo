@@ -1,0 +1,23 @@
+*{
+ background-color: teal;
+}
+
+h1{
+  color:hotpink;
+  text-align:center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.App{
+  display:Flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button{
+  background-color: white;
+  border-radius: 35px;
+}
+.title{
+  border-bottom:1px solid hotpink
+}
